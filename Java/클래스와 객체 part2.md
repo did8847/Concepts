@@ -61,12 +61,12 @@
 
   - 기본형 매개변수 : <span style="color:red">read only</span>
 
-    - 흔히, C언어에서 <span style="color:#00BFFF">call by value</span>로 불린다.
-    - <span style="color:#FFFF00">메서드 호출 시에 매개변수로 넘겨주는 값은 메서드의 지역변수로 복사가 이루어지는 형태</span> (수정을 해도 호출한 메서드 값에는 전혀 영향을 미치지 않는다.)
+    - 흔히, C언어에서 <span style="color:#3300CC">call by value</span>로 불린다.
+    - <span style="color:green">메서드 호출 시에 매개변수로 넘겨주는 값은 메서드의 지역변수로 복사가 이루어지는 형태</span> (수정을 해도 호출한 메서드 값에는 전혀 영향을 미치지 않는다.)
 
   - 참조형 매개변수 : <span style="color:red">read & write</span>
-    - 흔히, C언어에서 <span style="color:#00BFFF">call by reference</span>로 불린다.
-    - <span style="color:#FFFF00">메서드 호출 시에 매개변수로 넘겨주는 값은 주소값을 넘겨주는 형태</span> (수정을 할 시, 호출한 메서드의 값에도 직접적으로 영향을 미친다.)
+    - 흔히, C언어에서 <span style="color:#3300CC">call by reference</span>로 불린다.
+    - <span style="color:green">메서드 호출 시에 매개변수로 넘겨주는 값은 주소값을 넘겨주는 형태</span> (수정을 할 시, 호출한 메서드의 값에도 직접적으로 영향을 미친다.)
 
 ---
 

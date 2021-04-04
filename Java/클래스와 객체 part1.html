@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>클래스와 객체 part2.md</title>
+<title>클래스와 객체 part1.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -366,118 +366,137 @@ code {
     });
   </script>
 <h1 id="%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4">클래스와 객체</h1>
-<h2 id="1-method--return">#1 method &amp; return</h2>
+<h2 id="1-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%96%B8%EC%96%B4">#1 객체지향언어</h2>
 <ul>
 <li>
-<p>method</p>
+<p>객체(object)란?</p>
 <ul>
-<li>작업(기능)을 수행하기 위한 명령문들의 집합이라고 보면 된다.</li>
-<li>메서드는 선언부와 구현부로 나뉜다.
+<li>세상에 존재하는 모든것을 의미한다. 죽, 주변에 있는 사물이나 생명체와 같은 모든것들을 말한다.</li>
+<li>프로그래밍에서의 객체는 데이터의 분산을 막기 위해 데이터와 기능을 하나로 묶은 그룹이라고 볼 수 있다.
 <ul>
-<li>선언부 : 호출할 때 필요</li>
+<li>ex) 컴퓨터(PC) = 데이터(본체, 모니터 등) + 기능(화면제공, 소리 등)</li>
 </ul>
-<pre class="hljs"><code><div>ex) <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{ } -&gt; 중괄호 안이 구현부
-</div></code></pre>
 </li>
 </ul>
 </li>
 <li>
-<p>return</p>
+<p>객체지향언어(Object-oriented Language)란?</p>
 <ul>
-<li>
-<p>개념</p>
+<li>컴퓨터 프로그래밍의 한가지 기법으로, 프로그램을 그저 데이터와 처리방법으로 나누는게 아니라 프로그램에 다수의 <span style="color:red"><strong>객체</strong></span>를 만들고 이들이 서로 상호작용을 통해 만들어지는 방식이다.
 <ul>
-<li>
-<p>매개변수(인자값,arguments,parameter)로 값을 받아서 그 결과를 리턴값(반환값)으로 돌려준다.</p>
-<ul>
-<li>단, 매개변수가 없을 수 있으며, 리턴타입이 'void'라면 결과를 돌려주지 않아도 문제없다.</li>
+<li>ex) 컴퓨터(<span style="color:red"><strong>프로그램</strong></span>)의 기능이 제대로 작동하기 위해서는 RAM,CPU,SSD 등의 컴퓨터 부품 및 주변기기(<span style="color:red"><strong>객체</strong></span>)가 필요하다.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p>현재 실행중인 메서드를 중지한 후 호출한 곳으로 이동</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// return 값 존재 시</span>
-<span class="hljs-keyword">return</span>; <span class="hljs-comment">// return문만 작성</span>
+<p>객체지향언어의 특성</p>
+<ul>
+<li><span style="color:red">코드의 재사용성이 매우높다.</span>
+<ul>
+<li>새로운 코드를 작성할 때, 이미 만들어 놓은 코드를 이용해서 쉽게 작성이 가능하다.(상속,클래스 등등)</li>
+</ul>
+</li>
+<li>코드의 관리가 쉽다.
+<ul>
+<li>코드간의 직,간접적인 관계를 맺어줌으로써 보다 적은 노력으로 코드 변경이 가능하다.</li>
+</ul>
+</li>
+<li>보안과 신뢰성이 높은 프로그램 개발을 가능하게 한다.
+<ul>
+<li>제어자(접근제어자)와 메서드를 이용하여, 데이터의 <span style="color:blue"><strong>캡슐화</strong></span>가 가능하고, 코드의 중복을 제거하여 코드의 불일치로 인한 예외를 방지할 수 있다.
+<ul>
+<li><span style="color:blue"><strong>캡슐화</strong></span>:데이터와 코드의 형태를 외부로부터 알 수없게 하고, 데이터의 구조와 역할, 기능을 하나의 캡슐형태로 만드는 방법이다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>기존의 절차지향적 언어와 별반 다르지 않다. 약간의 규칙만 추가되었다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%99%9C%EC%9A%A9">#2 클래스와 인스턴스의 개념과 활용</h2>
+<ul>
+<li>
+<p>클래스와 객체의 관계</p>
+<ul>
+<li>클래스란 객체를 정의해놓은 코드이며, 객체를 생성하는데 사용된다.</li>
+<li>ex)
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><span style = "color:green">클래스</span></th>
+<th style="text-align:center"><span style = "color:green">객체(인스턴스)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">상품 설계도</td>
+<td style="text-align:center">상품</td>
+</tr>
+<tr>
+<td style="text-align:center">모니터 설계도</td>
+<td style="text-align:center">Monitor</td>
+</tr>
+<tr>
+<td style="text-align:center">붕어빵 기계</td>
+<td style="text-align:center">붕어빵</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><span style = "color:red">객체는 클래스에서 정의된 내용대로 메모리에 생성된 것을 의미한다</span></li>
+</ul>
+</li>
+<li>
+<p>객체의 구성요소</p>
+<ul>
+<li>객체는 통상 <span style = "color:red">속성(멤버 변수)</span>와 <span style = "color:red">기능(멤버 메서드)</span>로 되어 있다.
+<ul>
+<li>물론, 속성과 기능 없이도 객체를 만들 수 있으나 의미가 없다.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Monitor</span></span>{
 
-<span class="hljs-comment">// return 값 미존재 시</span>
-<span class="hljs-keyword">return</span> YM; <span class="hljs-comment">// return + 리턴값</span>
+        <span class="hljs-comment">// 속성(변수)   ex) 색상,채널,전원 등</span>
+        String color;             <span class="hljs-comment">// 모니터의 색</span>
+        <span class="hljs-keyword">int</span> channel;              <span class="hljs-comment">// 채널</span>
+        <span class="hljs-keyword">boolean</span> power;            <span class="hljs-comment">// 전원</span>
+
+        <span class="hljs-comment">// 기능(메서드) ex) 볼륨 조절,채널 변경 등</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">this</span>.power = !power;  <span class="hljs-comment">// 전원 on,off 기능</span>
+        }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">channelUp</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">this</span>.channel++;       <span class="hljs-comment">// 채널 높이기</span>
+        }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> channelDown {
+            <span class="hljs-keyword">this</span>.channel--;       <span class="hljs-comment">// 채널 낮추기</span>
+        }
+    }
 </div></code></pre>
 </li>
+<li>
+<p>인스턴스 생성 코드</p>
+<ul>
+<li>클래스명 참조변수;<br/>참조변수명 = new 클래스명();</li>
+</ul>
+<pre class="hljs"><code><div>ex) <span class="hljs-comment">// monitor참조변수의 타입이 Monitor이다. null로 초기화</span>
+   Monitor monitor = <span class="hljs-keyword">null</span>;
+   <span class="hljs-comment">// new연산자로 Monitor의 인스턴스를 만들어 heap에 할당</span>
+   monitor = <span class="hljs-keyword">new</span> Monitor();
+   <span class="hljs-comment">// 참조변수(리모컨)으로 인스턴스를 조작</span>
+   monitor.power();
+</div></code></pre>
+<ul>
+<li><span style = "color:red"><strong>monitor라는 참조변수는 Monitor를 조작하는 리모컨과 같은 개념</strong></span></li>
 </ul>
 </li>
 <li>
-<p>특징</p>
+<p>인스턴스의 사용</p>
 <ul>
-<li>반복적으로 수행된다고 판단되는 여러 문장이 있다면, 메서드로 작성하는 편이 좋다.</li>
-<li>코드 관리가 용이하다.</li>
-<li>한가지 메서드는 한가지 기능만 수행하는 편이 좋다.</li>
-<li><span style="color:red"><strong>코트 중복 제거, 누가 봐도 알아볼 수 있는 프로그램이 되도록 노력, 재사용성 향상(프로그래머의 기본 자질)</strong></span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="2-call-stack--%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98">#2 Call Stack &amp; 매개변수</h2>
-<ul>
-<li>
-<p>JVM의 메모리 구조</p>
-<ul>
-<li>
-<p>메서드 영역, Class영역, Static영역</p>
-<ul>
-<li>Class 정보와 Class 변수가 저장되는 곳</li>
-<li>Static이 붙은 변수나 메서드가 저장되는 곳</li>
-</ul>
-</li>
-<li>
-<p>호출스택 (Call Stack)</p>
-<ul>
-<li><span style="color:red">후입선출 개념</span></li>
-<li>메서드의 작업 공간</li>
-<li>메서드가 호출되면 메서드 수행에 필요한 메모리 공간을 할당받고 메서드가 종료되면 사용하던 메모리를 반환한다.</li>
-<li><span style="color:red">생성자 및 메서드 호출 시에 필요한 메모리 공간을 스택 공간에 할당한다.</span></li>
-<li><span style="color:red"><strong>호출 스택에서 맨 위에 있는 메서드가 현재 실행 중이며, 아래에 있는 메서드가
-바로 위에 메서드를 호출하고 대기상태로 있다.</strong>&lt;&gt;</li>
-</ul>
-</li>
-<li>
-<p>힙(Heap)</p>
-<ul>
-<li>인스턴스가 생성되는 공간</li>
-<li>new연산자에 의해서 생성되는 배열과 객체는 모두 여기에 생성된다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>기본형 매개변수 &amp; 참조형 매개변수</p>
-<ul>
-<li>
-<p>기본형 매개변수 : <span style="color:red">read only</span></p>
-<ul>
-<li>흔히, C언어에서 <span style="color:#3300CC">call by value</span>로 불린다.</li>
-<li><span style="color:green">메서드 호출 시에 매개변수로 넘겨주는 값은 메서드의 지역변수로 복사가 이루어지는 형태</span> (수정을 해도 호출한 메서드 값에는 전혀 영향을 미치지 않는다.)</li>
-</ul>
-</li>
-<li>
-<p>참조형 매개변수 : <span style="color:red">read &amp; write</span></p>
-<ul>
-<li>흔히, C언어에서 <span style="color:#3300CC">call by reference</span>로 불린다.</li>
-<li><span style="color:green">메서드 호출 시에 매개변수로 넘겨주는 값은 주소값을 넘겨주는 형태</span> (수정을 할 시, 호출한 메서드의 값에도 직접적으로 영향을 미친다.)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="3-%EC%9E%AC%EA%B7%80-%ED%98%B8%EC%B6%9Crecursive-call">#3 재귀 호출(recursive call)</h2>
-<ul>
-<li>재귀 호출 ex) 팩토리얼, 제곱, 트리, 폴더목록 등
-<ul>
-<li><span style="color:red">메서드 내에서 자기자신을 반복적으로 호출하는 것을 말한다.<span/></li>
-<li>재귀 호출은 얼마든지 반복문으로 바꿀 수 있다.</li>
-<li>또한, 반복문보다 성능이 떨어진다.(스택에 계속 쌓인다.)</li>
-<li>그래도, 코드가 간결하고 가독성이 좋아 많이 사용한다.</li>
+<li><span style = "color:red">여러 개의 참조변수가 하나의 인스턴스를 가리키는 경우는 얼마든지 가능하다. 하지만 하나의 참조변수가 여러개의 인스턴스를 가리키는 것은 불가능하다.</span> -&gt; 하나의 변수에는 하나의 값만 들어가기 때문에</li>
 </ul>
 </li>
 </ul>
